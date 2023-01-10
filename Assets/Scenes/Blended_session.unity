@@ -10210,6 +10210,8 @@ MonoBehaviour:
   G_Toogle: {fileID: 258178293}
   TXT_Max: {fileID: 1795406556414293360}
   TXT_Current: {fileID: 1795406557534603498}
+  backButton: {fileID: 6245287430319744973}
+  nextButton: {fileID: 7662239743941321703}
 --- !u!224 &7662239742301189697
 RectTransform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class Activity1 : MonoBehaviour
     public int I_count,I_dummy;
     public GameObject G_final, G_Toogle;
     public Text TXT_Max, TXT_Current;
+    public Button backButton;
+    public Button nextButton;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +56,7 @@ public class Activity1 : MonoBehaviour
             showquestion();
             int i = I_count + 1;
             TXT_Current.text = i.ToString();
+            backButton.gameObject.SetActive(true);
         }
         else
         {
