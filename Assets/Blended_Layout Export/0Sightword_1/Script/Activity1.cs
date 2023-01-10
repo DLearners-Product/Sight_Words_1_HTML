@@ -21,6 +21,7 @@ public class Activity1 : MonoBehaviour
         int i = I_count + 1;
         TXT_Current.text = i.ToString();
         showquestion();
+      
     }
     public void showquestion()
     {
@@ -58,9 +59,10 @@ public class Activity1 : MonoBehaviour
             TXT_Current.text = i.ToString();
             backButton.gameObject.SetActive(true);
         }
-        else
+        else if (I_count == GA_Objects.Length)
         {
-            G_final.SetActive(true);
+            //G_final.SetActive(true);
+            nextButton.gameObject.SetActive(false);
         }
     }
     public void BUT_Back()
@@ -71,10 +73,12 @@ public class Activity1 : MonoBehaviour
             showquestion();
             int i = I_count + 1;
             TXT_Current.text = i.ToString();
+            nextButton.gameObject.SetActive(true);
         }
-        else
+        else if (I_count == -1)
         {
-            G_final.SetActive(true);
+            //G_final.SetActive(true);
+            backButton.gameObject.SetActive(false);
         }
 
     }
