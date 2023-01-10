@@ -10,7 +10,6 @@ public class Activity1 : MonoBehaviour
     public GameObject G_final, G_Toogle;
     public Text TXT_Max, TXT_Current;
     public Button backButton;
-    public Button nextButton;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +20,7 @@ public class Activity1 : MonoBehaviour
         int i = I_count + 1;
         TXT_Current.text = i.ToString();
         showquestion();
+        backButton.gameObject.SetActive(false);
       
     }
     public void showquestion()
@@ -57,13 +57,13 @@ public class Activity1 : MonoBehaviour
             showquestion();
             int i = I_count + 1;
             TXT_Current.text = i.ToString();
-            backButton.gameObject.SetActive(true);
+            BUT_Enabler();
         }
-        else if (I_count == GA_Objects.Length)
+        else
         {
-            //G_final.SetActive(true);
-            nextButton.gameObject.SetActive(false);
+            G_final.SetActive(true);
         }
+       
     }
     public void BUT_Back()
     {
@@ -73,13 +73,21 @@ public class Activity1 : MonoBehaviour
             showquestion();
             int i = I_count + 1;
             TXT_Current.text = i.ToString();
-            nextButton.gameObject.SetActive(true);
+            BUT_Enabler();
         }
-        else if (I_count == -1)
+        
+
+    }
+    // Added button enable disable for maintainance tracker 1
+    public void BUT_Enabler()
+    {
+        if(I_count == 0)
         {
-            //G_final.SetActive(true);
             backButton.gameObject.SetActive(false);
         }
-
+        else
+        {
+            backButton.gameObject.SetActive(true);
+        }
     }
 }
