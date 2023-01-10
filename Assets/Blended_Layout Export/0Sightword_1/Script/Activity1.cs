@@ -75,6 +75,10 @@ public class Activity1 : MonoBehaviour
             TXT_Current.text = i.ToString();
             BUT_Enabler();
         }
+        else
+        {
+            G_final.SetActive(true);
+        }
         
 
     }

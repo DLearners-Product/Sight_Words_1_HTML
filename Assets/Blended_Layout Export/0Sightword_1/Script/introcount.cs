@@ -9,6 +9,7 @@ public class introcount : MonoBehaviour
     public GameObject G_final;
     public Text TXT_Max, TXT_Current;
     public int I_Qcount,I_count;
+    public Button backButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class introcount : MonoBehaviour
         int i = I_Qcount + 1;
         TXT_Current.text = i.ToString();
         showquestion();
-
+        backButton.gameObject.SetActive(false);
     }
     public void showquestion()
     {
@@ -38,6 +39,7 @@ public class introcount : MonoBehaviour
 
             int i = I_Qcount + 1;
             TXT_Current.text = i.ToString();
+            BUT_Enabler();
         }
         else
         {
@@ -52,11 +54,25 @@ public class introcount : MonoBehaviour
             showquestion();
             int i = I_Qcount + 1;
             TXT_Current.text = i.ToString();
+            BUT_Enabler();
         }
         else
         {
             G_final.SetActive(true);
         }
 
+    }
+
+    // Added button enable disable for maintainance tracker 1
+    public void BUT_Enabler()
+    {
+        if (I_Qcount == 0)
+        {
+            backButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            backButton.gameObject.SetActive(true);
+        }
     }
 }
